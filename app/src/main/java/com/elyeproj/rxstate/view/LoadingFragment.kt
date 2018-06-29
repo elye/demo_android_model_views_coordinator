@@ -23,8 +23,4 @@ class LoadingFragment: Fragment(), Presenter {
         super.onViewCreated(view, savedInstanceState)
         container.setOnClickListener { coordinator.toast("Loading Fragment") }
     }
-
-    override fun setData(presentable: Presentation) {
-        // No data to set
-    }
 }

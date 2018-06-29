@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
     companion object {
         private const val COORDINATOR_STATE = "CoordinatorState"
+        const val PRESENTATION_STATE = "PresentationState"
     }
 
     private val mainCoordinator by lazy {
@@ -70,11 +71,13 @@ class MainActivity : AppCompatActivity(), MainView {
                 .replace(R.id.status_container, createView(presentation)).commit()
     }
 
-    private fun createView(presentable: Presentation): Fragment? {
-        val fragment = presentable.getViewClass().newInstance()
+    private fun createView(presentation: Presentation): Fragment? {
+        val fragment = presentation.getViewClass().newInstance()
+        val arguments = Bundle()
+        arguments.putSerializable(PRESENTATION_STATE, presentation.getData())
+        fragment.arguments = arguments
         with(fragment as Presenter) {
             coordinator = mainCoordinator
-            setData(presentable)
         }
         return fragment
     }

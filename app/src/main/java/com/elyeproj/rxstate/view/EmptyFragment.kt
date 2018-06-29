@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elyeproj.rxstate.R
-import com.elyeproj.rxstate.coordinator.Presenter
 import com.elyeproj.rxstate.coordinator.MainCoordinator
-import com.elyeproj.rxstate.coordinator.Presentation
+import com.elyeproj.rxstate.coordinator.Presenter
 import kotlinx.android.synthetic.main.view_empty.*
 
 class EmptyFragment: Fragment(), Presenter {
@@ -22,9 +21,5 @@ class EmptyFragment: Fragment(), Presenter {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         container.setOnClickListener { coordinator.toast("Empty Fragment") }
-    }
-
-    override fun setData(presentable: Presentation) {
-        // No data to set
     }
 }
