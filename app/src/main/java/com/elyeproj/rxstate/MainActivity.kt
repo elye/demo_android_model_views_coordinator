@@ -76,9 +76,7 @@ class MainActivity : AppCompatActivity(), Container {
         val arguments = Bundle()
         arguments.putSerializable(PRESENTATION_STATE, presentation.data)
         fragment.arguments = arguments
-        with(fragment as ViewPresentation) {
-            coordinator = mainCoordinator
-        }
+        (fragment as ViewPresentation).coordinator = mainCoordinator
         return fragment
     }
 }
