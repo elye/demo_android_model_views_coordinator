@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity(), MainView {
     private fun createView(presentation: Presentation): Fragment? {
         val fragment = presentation.getViewClass().newInstance()
         val arguments = Bundle()
-        arguments.putSerializable(PRESENTATION_STATE, presentation.getData())
+        arguments.putSerializable(PRESENTATION_STATE, presentation.data)
         fragment.arguments = arguments
         with(fragment as ViewPresentation) {
             coordinator = mainCoordinator

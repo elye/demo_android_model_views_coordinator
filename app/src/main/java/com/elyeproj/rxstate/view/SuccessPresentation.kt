@@ -6,7 +6,7 @@ import java.io.Serializable
 
 class SuccessPresentation(successData: DataModel): Presentation() {
     data class State(val successData: DataModel) : Serializable
-    override val state = State(successData)
+    override val data = State(successData)
     override fun getViewClass() = SuccessFragment::class.java
 
 }
