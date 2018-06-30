@@ -9,13 +9,13 @@ import android.view.ViewGroup
 import com.elyeproj.rxstate.MainActivity.Companion.PRESENTATION_STATE
 import com.elyeproj.rxstate.R
 import com.elyeproj.rxstate.coordinator.ViewPresentation
-import com.elyeproj.rxstate.coordinator.MainCoordinator
+import com.elyeproj.rxstate.coordinator.Coordinator
 import kotlinx.android.synthetic.main.view_error.*
 
 class ErrorFragment: Fragment(), ViewPresentation {
 
     lateinit var errorMessage: String
-    override lateinit var coordinator: MainCoordinator
+    override lateinit var coordinator: Coordinator
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_error, container, false)

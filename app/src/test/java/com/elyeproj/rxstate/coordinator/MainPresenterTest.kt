@@ -25,9 +25,9 @@ class MainPresenterTest {
     lateinit var dataSource: DataSource
 
     @Mock
-    lateinit var view: MainView
+    lateinit var view: Container
 
-    lateinit var presenter: MainCoordinator
+    lateinit var presenter: Coordinator
 
     companion object {
         @ClassRule @JvmField
@@ -42,7 +42,7 @@ class MainPresenterTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        presenter = MainCoordinator(view, dataSource)
+        presenter = Coordinator(view, dataSource)
     }
 
     @Test

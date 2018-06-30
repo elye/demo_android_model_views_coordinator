@@ -3,7 +3,7 @@ package com.elyeproj.rxstate.coordinator
 import android.support.v4.app.Fragment
 import java.io.Serializable
 
-interface MainView {
+interface Container {
     fun showView(presentation: Presentation)
     fun toast(message: String)
 }
@@ -14,5 +14,5 @@ abstract class Presentation {
 }
 
 interface ViewPresentation {
-    var coordinator: MainCoordinator
+    var coordinator: Coordinator
 }

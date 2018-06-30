@@ -5,13 +5,13 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.elyeproj.rxstate.coordinator.DataSource
-import com.elyeproj.rxstate.coordinator.MainCoordinator
-import com.elyeproj.rxstate.coordinator.MainView
+import com.elyeproj.rxstate.coordinator.Coordinator
+import com.elyeproj.rxstate.coordinator.Container
 import com.elyeproj.rxstate.coordinator.Presentation
 import com.elyeproj.rxstate.coordinator.ViewPresentation
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : AppCompatActivity(), Container {
 
     companion object {
         private const val COORDINATOR_STATE = "CoordinatorState"
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     private val mainCoordinator by lazy {
-        MainCoordinator(this, DataSource())
+        Coordinator(this, DataSource())
     }
 
 

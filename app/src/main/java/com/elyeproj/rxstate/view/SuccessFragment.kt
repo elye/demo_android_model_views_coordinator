@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.elyeproj.rxstate.MainActivity
 import com.elyeproj.rxstate.R
-import com.elyeproj.rxstate.coordinator.MainCoordinator
+import com.elyeproj.rxstate.coordinator.Coordinator
 import com.elyeproj.rxstate.coordinator.ViewPresentation
 import com.elyeproj.rxstate.model.DataModel
 import kotlinx.android.synthetic.main.view_success.*
@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.view_success.*
 class SuccessFragment : Fragment(), ViewPresentation {
 
     lateinit var dataModel: DataModel
-    override lateinit var coordinator: MainCoordinator
+    override lateinit var coordinator: Coordinator
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.view_success, container, false)

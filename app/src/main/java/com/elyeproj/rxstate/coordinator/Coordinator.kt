@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.io.Serializable
 
-class MainCoordinator(val view: MainView, val dataSource: DataSource) {
+class Coordinator(val view: Container, val dataSource: DataSource) {
     private var disposable: Disposable? = null
 
     var isLoading = false
