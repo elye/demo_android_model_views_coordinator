@@ -8,7 +8,7 @@ import com.elyeproj.rxstate.coordinator.DataSource
 import com.elyeproj.rxstate.coordinator.MainCoordinator
 import com.elyeproj.rxstate.coordinator.MainView
 import com.elyeproj.rxstate.coordinator.Presentation
-import com.elyeproj.rxstate.coordinator.Presenter
+import com.elyeproj.rxstate.coordinator.ViewPresentation
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
@@ -61,14 +61,14 @@ class MainActivity : AppCompatActivity(), MainView {
 
     private fun restoreFragmentState() {
         supportFragmentManager.findFragmentById(R.id.status_container)?.let {
-            (it as Presenter).coordinator = mainCoordinator
+            (it as ViewPresentation).coordinator = mainCoordinator
         }
     }
 
     override fun showView(presentation: Presentation) {
         supportFragmentManager.beginTransaction()
                 .setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out)
-                .replace(R.id.status_container, createView(presentation)).commit()
+                .replace(R.id.status_container, createView(presentation)).commitAllowingStateLoss()
     }
 
     private fun createView(presentation: Presentation): Fragment? {
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(), MainView {
         val arguments = Bundle()
         arguments.putSerializable(PRESENTATION_STATE, presentation.getData())
         fragment.arguments = arguments
-        with(fragment as Presenter) {
+        with(fragment as ViewPresentation) {
             coordinator = mainCoordinator
         }
         return fragment

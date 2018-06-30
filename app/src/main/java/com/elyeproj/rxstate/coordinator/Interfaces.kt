@@ -14,6 +14,6 @@ abstract class Presentation {
     fun getData(): Serializable? = state
 }
 
-interface Presenter {
+interface ViewPresentation {
     var coordinator: MainCoordinator
 }

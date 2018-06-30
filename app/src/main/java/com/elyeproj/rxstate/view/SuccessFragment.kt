@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import com.elyeproj.rxstate.MainActivity
 import com.elyeproj.rxstate.R
 import com.elyeproj.rxstate.coordinator.MainCoordinator
-import com.elyeproj.rxstate.coordinator.Presenter
+import com.elyeproj.rxstate.coordinator.ViewPresentation
 import com.elyeproj.rxstate.model.DataModel
 import kotlinx.android.synthetic.main.view_success.*
 
-class SuccessFragment : Fragment(), Presenter {
+class SuccessFragment : Fragment(), ViewPresentation {
 
     lateinit var dataModel: DataModel
     override lateinit var coordinator: MainCoordinator

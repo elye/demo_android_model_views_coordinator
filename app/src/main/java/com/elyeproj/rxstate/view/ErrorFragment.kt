@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.elyeproj.rxstate.MainActivity.Companion.PRESENTATION_STATE
 import com.elyeproj.rxstate.R
-import com.elyeproj.rxstate.coordinator.Presenter
+import com.elyeproj.rxstate.coordinator.ViewPresentation
 import com.elyeproj.rxstate.coordinator.MainCoordinator
-import com.elyeproj.rxstate.coordinator.Presentation
 import kotlinx.android.synthetic.main.view_error.*
 
-class ErrorFragment: Fragment(), Presenter {
+class ErrorFragment: Fragment(), ViewPresentation {
 
     lateinit var errorMessage: String
     override lateinit var coordinator: MainCoordinator

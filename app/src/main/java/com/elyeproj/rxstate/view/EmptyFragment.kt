@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.elyeproj.rxstate.R
 import com.elyeproj.rxstate.coordinator.MainCoordinator
-import com.elyeproj.rxstate.coordinator.Presenter
+import com.elyeproj.rxstate.coordinator.ViewPresentation
 import kotlinx.android.synthetic.main.view_empty.*
 
-class EmptyFragment: Fragment(), Presenter {
+class EmptyFragment: Fragment(), ViewPresentation {
 
     override lateinit var coordinator: MainCoordinator
 
