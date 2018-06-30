@@ -24,8 +24,7 @@ class ErrorFragment: Fragment(), ViewPresentation {
     override fun onAttach(context: Context?) {
         super.onAttach(context)
         arguments?.let{
-            val data = it.getSerializable(PRESENTATION_STATE) as ErrorPresentation.State
-            errorMessage = data.errorMessage
+            errorMessage = it.getSerializable(PRESENTATION_STATE) as String
         }
     }
 

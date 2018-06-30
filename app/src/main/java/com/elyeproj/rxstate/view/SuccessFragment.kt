@@ -25,8 +25,7 @@ class SuccessFragment : Fragment(), ViewPresentation {
     override fun onAttach(context: Context?) {
         super.onAttach(context)
         arguments?.let {
-            val data = it.getSerializable(MainActivity.PRESENTATION_STATE) as SuccessPresentation.State
-            dataModel = data.successData
+            dataModel = it.getSerializable(MainActivity.PRESENTATION_STATE) as DataModel
         }
     }
 
